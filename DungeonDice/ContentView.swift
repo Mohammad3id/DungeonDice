@@ -22,11 +22,6 @@ struct ContentView: View {
     }
     
     @State private var resultMessage = "";
-    @State private var buttonsLeftOver = 0;
-    
-    let horizontalPadding = 16.0
-    let spacing = 8.0
-    let buttonWidth = 105.0
     
     var body: some View {
         GeometryReader { geo in
@@ -39,7 +34,7 @@ struct ContentView: View {
                 
                 Spacer()
                 
-                LazyCenteredGrid(cellWidth: buttonWidth) {
+                LazyCenteredGrid(cellWidth: 105) {
                     ForEach(Dice.allCases, id: \.self) { dice in
                         Button {
                             resultMessage = "You rolled a \(dice.roll()) on a \(dice)-sided dice"
